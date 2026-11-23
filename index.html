@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>team jcw 팀 소개</title>
+<link rel="icon" href="assets/jcw-logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700&text=%E5%85%AB%E6%96%B9%E6%9D%A5%E8%B4%A2&display=swap">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFFFF;color:#0B0B0F;font-family:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;line-height:1.75;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:#3B1A78;color:#FFFFFF}
+section[id]{scroll-margin-top:16px}
+a{color:#3B1A78;text-decoration-thickness:1px;text-underline-offset:4px}a:hover{color:#0B0B0F}
+a:focus-visible{outline:3px solid #3B1A78;outline-offset:3px}
+.on-purple a:focus-visible{outline-color:#FFFFFF}
+
+.nlink{display:inline-block;padding:10px 0;color:#0B0B0F;text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:2px;text-underline-offset:8px;transition:text-decoration-color .2s,color .2s}
+.nlink:hover{color:#3B1A78;text-decoration-color:#3B1A78}
+.flink{color:#D9CCF2;text-decoration:none;transition:color .2s}.flink:hover{color:#FFFFFF}
+
+.btn{display:inline-flex;align-items:center;gap:12px;box-sizing:border-box;min-height:52px;padding:0 28px;border:1px solid transparent;font-weight:500;letter-spacing:0.03em;text-decoration:none;transition:background-color .2s,color .2s,border-color .2s}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .2s}
+.btn:hover svg{transform:translateX(4px)}
+.btn.ext:hover svg{transform:translate(3px,-3px)}
+.btn-primary{background:#3B1A78;color:#FFFFFF;border-color:#3B1A78}
+.btn-primary:hover{background:#0B0B0F;border-color:#0B0B0F;color:#FFFFFF}
+.btn-outline{background:transparent;color:#0B0B0F;border-color:#0B0B0F}
+.btn-outline:hover{background:#0B0B0F;color:#FFFFFF}
+.btn-light{background:#FFFFFF;color:#3B1A78;border-color:#FFFFFF}
+.btn-light:hover{background:#0B0B0F;border-color:#0B0B0F;color:#FFFFFF}
+
+.eyebrow{display:flex;flex-direction:column;gap:2px;padding-top:8px}
+.eyebrow b{font-weight:700;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:#3B1A78}
+.eyebrow span{font-size:15px;font-weight:700}
+
+.row{display:flex;flex-wrap:wrap;gap:4px 32px;padding:20px 0;border-bottom:1px solid rgba(11,11,15,0.16)}
+.row dt{flex:0 0 140px;font-size:15px;color:#3D3548;padding-top:3px}
+.row dd{flex:1 1 240px;min-width:0;margin:0;font-size:20px;font-weight:500}
+
+.slides{display:block;position:relative;width:100%;aspect-ratio:3/2;overflow:hidden;padding:0;margin:0;border:0;background:transparent;cursor:pointer;font:inherit;color:inherit}
+.slides img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block}
+.slide-b{transition:opacity .8s ease}
+.slides:focus-visible{outline:3px solid #3B1A78;outline-offset:4px}
+.seg{flex:1 1 0;min-width:0;display:block;padding:12px 0 4px;margin:0;border:0;background:transparent;text-align:left;font:inherit;color:inherit;cursor:pointer;transition:opacity .3s}
+.seg:focus-visible{outline:3px solid #3B1A78;outline-offset:4px}
+.track{position:relative;display:block;height:3px;overflow:hidden;background:rgba(11,11,15,0.16)}
+.fill{position:absolute;top:0;left:0;display:block;width:100%;height:100%;background:#3B1A78;transform-origin:left center;transform:scaleX(0)}
+.fill-run{animation:jcwFill 20s linear forwards}
+.cap-label{display:block;padding-top:12px;font-size:14px;font-weight:700;letter-spacing:0.04em}
+@keyframes jcwFill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+.tl{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;border-top:1px solid #0B0B0F}
+.tl-item{display:flex;flex-wrap:wrap;gap:10px 40px;padding:36px 0;border-bottom:1px solid rgba(11,11,15,0.16)}
+.tl-date{flex:0 0 200px;display:flex;align-items:baseline;gap:10px;font-weight:700;font-size:18px;letter-spacing:0.01em;color:#3B1A78;font-variant-numeric:tabular-nums}
+.tl-date::before{content:"";flex:none;width:10px;height:10px;background:#3B1A78}
+.tl-body{flex:1 1 320px;min-width:0;max-width:640px}
+.tl-body h3{margin:0 0 10px;font-size:22px;line-height:1.4;font-weight:700;letter-spacing:-0.02em}
+.tl-body p{margin:0;font-size:17px;line-height:1.85;color:#3D3548}
+
+.spcard{flex:1 1 300px;max-width:520px;min-width:0;display:flex;align-items:center;justify-content:center;padding:48px 40px;border:1px solid #0B0B0F;box-sizing:border-box}
+
+.bgm{position:fixed;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:50;display:flex;align-items:center;justify-content:center;height:52px;padding:0;margin:0;border:1px solid rgba(255,255,255,0.4);background:rgba(11,11,15,0.7);overflow:hidden;font:inherit;color:#FFFFFF;cursor:pointer;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:background-color .2s}
+.bgm:hover{background:rgba(59,26,120,0.85)}
+.bgm:focus-visible{outline:3px solid #3B1A78;outline-offset:3px}
+.bgm svg{width:20px;height:20px;display:block}
+.bgm-ic{flex:none;display:flex;align-items:center;justify-content:center;width:50px;height:50px}
+.bgm-label{display:block;box-sizing:border-box;overflow:hidden;white-space:nowrap;font-size:14px;font-weight:700;letter-spacing:0.02em;line-height:1;transition:max-width .5s ease,opacity .35s ease,padding-left .5s ease}
+
+@media (prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+.slide-b,.seg,.bgm,.bgm-label{transition:none}
+.fill-run{animation:none;transform:scaleX(1)}
+.btn,.btn svg,.nlink{transition:none}
+}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<template id="dc-tpl">
+<div style="width:100%">
+
+<section style="background:#FFFFFF">
+<div style="max-width:1120px;margin:0 auto;padding:0 24px;box-sizing:border-box">
+<header style="display:flex;flex-wrap:wrap;gap:8px 32px;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid rgba(11,11,15,0.16)">
+<img src="assets/jcw-logo.svg" alt="JCW" style="display:block;height:26px;width:auto">
+<nav style="display:flex;flex-wrap:wrap;flex:1 1 auto;justify-content:space-evenly;gap:0 20px;align-items:center;font-weight:500">
+<a href="#about" class="nlink">팀 소개</a>
+<a href="#history" class="nlink">히스토리</a>
+<a href="#sponsor" class="nlink">스폰서</a>
+<a href="shop.html" class="nlink" onClick="{{ goApply }}">SHOP</a>
+<a href="#instagram" class="nlink">Instagram</a>
+</nav>
+</header>
+<div style="display:flex;flex-direction:column;align-items:center;gap:24px;padding-top:88px;text-align:center">
+<img src="assets/jcw-logo.svg" alt="JCW" style="display:block;width:min(100%,360px);height:auto">
+<img src="assets/jcw-subtitle.svg" alt="Jungho Cycling Works" style="display:block;width:min(100%,380px);height:auto">
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;padding-top:20px">
+<a href="apply.html" class="btn btn-primary" onClick="{{ goApply }}">팀 지원하기<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"></path></svg></a>
+<a href="https://www.instagram.com/team_jcw_?dmpr=dnJvb2tlNjYweG53" class="btn btn-outline ext">Instagram<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"></path></svg></a>
+</div>
+<sc-if value="{{ recruiting }}" hint-placeholder-val="{{ true }}">
+<a href="apply.html" onClick="{{ goApply }}" style="display:inline-block;padding-top:8px;font-size:15px;font-weight:700;letter-spacing:0.02em;color:#0B0B0F;text-decoration:none">팀원 모집 마감까지 <span style="color:#3B1A78;font-weight:700;font-variant-numeric:tabular-nums">{{ countText }}</span></a>
+</sc-if>
+</div>
+<div style="max-width:880px;margin:72px auto 0;padding-bottom:112px">
+<button type="button" class="slides" onClick="{{ next }}" aria-label="다음 사진 보기">
+<img class="slide-a" src="assets/slide-jcw.jpg" alt="JCW 로고">
+<img class="slide-b" src="assets/slide-race.jpg" alt="크리테리움 대회에서 결승선을 통과하는 JCW 선수" style="opacity: {{ bOpacity }}">
+</button>
+<div style="display:flex;gap:16px;padding-top:20px">
+<button type="button" class="seg" onClick="{{ goA }}" aria-label="JCW 사진 보기" style="opacity: {{ aLabelOpacity }}">
+<span class="track"><sc-if value="{{ isA }}" hint-placeholder-val="{{ true }}"><span class="fill fill-run"></span></sc-if></span>
+<span class="cap-label">JCW</span>
+</button>
+<button type="button" class="seg" onClick="{{ goB }}" aria-label="King of Track 사진 보기" style="opacity: {{ bLabelOpacity }}">
+<span class="track"><sc-if value="{{ isB }}" hint-placeholder-val="{{ false }}"><span class="fill fill-run"></span></sc-if></span>
+<span class="cap-label">King of Track</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+
+<section id="about" style="border-top: 1px solid rgba(11,11,15,0.14)">
+<div style="max-width:1120px;margin:0 auto;padding:0 24px;box-sizing:border-box;display:flex;flex-wrap:wrap;gap:40px 64px;padding-top:128px;padding-bottom:136px">
+<div class="eyebrow" style="flex:0 0 160px"><b>About</b><span>팀 소개</span></div>
+<div style="flex:1 1 480px;min-width:0;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:20px;max-width:680px">
+<h2 style="margin:0;font-size:clamp(30px,4.2vw,48px);line-height:1.25;font-weight:700;letter-spacing:-0.03em;text-wrap:balance">ABOUT JCW</h2>
+<p style="margin:0;font-size:18px">team jcw는 Jungho Cycling Works의 줄임말로, 2023년에 시작한 사이클링 팀입니다.</p>
+<p style="margin:0;font-size:18px">크리테리움은 짧은 순환 코스를 여러 바퀴 도는 경기입니다. 팀은 이 크리테리움 대회를 주로 달리고, 대표적으로 킹 오브 트랙에 출전합니다.</p>
+</div>
+<dl style="margin:0;display:flex;flex-direction:column;border-top:1px solid #0B0B0F">
+<div class="row">
+<dt>팀 이름</dt>
+<dd>team jcw (Jungho Cycling Works)</dd>
+</div>
+<div class="row">
+<dt>창단</dt>
+<dd>2023년</dd>
+</div>
+<div class="row">
+<dt>팀장</dt>
+<dd>이정호</dd>
+</div>
+<div class="row">
+<dt>팀장 인스타그램</dt>
+<dd><a href="https://www.instagram.com/happpy_ing_?gwpx=amZiNXpzYzAxM21t">@happpy_ing_</a></dd>
+</div>
+<div class="row">
+<dt>주 종목</dt>
+<dd>크리테리움</dd>
+</div>
+<div class="row">
+<dt>출전 대회</dt>
+<dd>킹 오브 트랙 등</dd>
+</div>
+</dl>
+</div>
+</div>
+</section>
+
+<section id="history" style="border-top: 1px solid rgba(11,11,15,0.14)">
+<div style="max-width:1120px;margin:0 auto;padding:0 24px;box-sizing:border-box;display:flex;flex-wrap:wrap;gap:40px 64px;padding-top:128px;padding-bottom:136px">
+<div class="eyebrow" style="flex:0 0 160px"><b>History</b><span>히스토리</span></div>
+<div style="flex:1 1 480px;min-width:0;display:flex;flex-direction:column;gap:48px">
+<h2 style="margin:0;font-size:clamp(30px,4.2vw,48px);line-height:1.25;font-weight:700;letter-spacing:-0.03em;text-wrap:balance">TEAM JCW History</h2>
+<ol class="tl">
+<li class="tl-item">
+<div class="tl-date">2023.09 – 2024.10</div>
+<div class="tl-body">
+<h3>팀 창단 구상 및 초기 대회 출전</h3>
+<p>19KOT 출전을 계기로 팀 결성을 기획하고, 22KOT에 참가하며 팀의 기반을 다졌습니다.</p>
+</div>
+</li>
+<li class="tl-item">
+<div class="tl-date">2025.02</div>
+<div class="tl-body">
+<h3>TEAM PTSD 공식 창단</h3>
+<p>인천 송도를 거점으로 공식 창단하여 2025 시즌 팀 킷을 발표하고 코디바이크·IdH WATCH Co. 후원으로 활동을 시작했습니다.</p>
+</div>
+</li>
+<li class="tl-item">
+<div class="tl-date">2025.07 – 2025.08</div>
+<div class="tl-body">
+<h3>23KOT · 24KOT 출전</h3>
+<p>파주 스피드파크 23KOT와 고양특례시장배 24KOT 크리테리움에 출전하며 본격적인 레이스 경험을 쌓았습니다.</p>
+</div>
+</li>
+<li class="tl-item">
+<div class="tl-date">2026.03 – 2026.05</div>
+<div class="tl-body">
+<h3>TEAM JCW 리브랜딩 및 25KOT 출전</h3>
+<p>TEAM JCW로 팀명을 변경하고 벨로케어(VELO CARE) 파트너십 체결, 신규 팀 킷 발표와 함께 25KOT(케이린·제외경기)에 출전했습니다.</p>
+</div>
+</li>
+<li class="tl-item">
+<div class="tl-date">2026.08</div>
+<div class="tl-body">
+<h3>26KOT 출전 및 주요 성과</h3>
+<p>파주 스피드파크 26KOT에 출전해 고등부 폴포지션 맨 앞 그리드 6인에 합류하며 경쟁력을 입증했습니다.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</section>
+
+<section id="sponsor" style="border-top: 1px solid rgba(11,11,15,0.14)">
+<div style="max-width:1120px;margin:0 auto;padding:0 24px;box-sizing:border-box;display:flex;flex-wrap:wrap;gap:40px 64px;padding-top:128px;padding-bottom:136px">
+<div class="eyebrow" style="flex:0 0 160px"><b>Sponsor</b><span>스폰서</span></div>
+<div style="flex:1 1 480px;min-width:0;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:20px;max-width:680px">
+<h2 style="margin:0;font-size:clamp(30px,4.2vw,48px);line-height:1.25;font-weight:700;letter-spacing:-0.02em;text-wrap:balance">SPONSOR</h2>
+<p style="margin:0;font-size:18px">team jcw의 대회 출전을 함께하는 스폰서입니다. 스폰서 문의는 팀 인스타그램으로 연락해 주세요.</p>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:24px;align-items:stretch">
+<div class="spcard">
+<img src="assets/velocare.svg" alt="VELO CARE" style="display:block;width:100%;max-width:340px;height:auto">
+</div>
+<div class="spcard">
+<img src="assets/royal-indigo.svg" alt="Royal indigo W140 Jiwoo Bae" style="display:block;width:100%;max-width:280px;height:auto">
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="instagram" class="on-purple" style="position:relative;overflow:hidden;background:#3B1A78;color:#FFFFFF">
+<img src="assets/jcw-logo.svg" alt="" aria-hidden="true" style="position:absolute;right:-80px;bottom:-40px;width:min(70%,680px);height:auto;filter:invert(1);opacity:0.08;pointer-events:none">
+<div style="position:relative;max-width:1120px;margin:0 auto;padding:0 24px;box-sizing:border-box;display:flex;flex-direction:column;gap:24px;padding-top:128px;padding-bottom:136px">
+<div style="font-weight:700;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:#D9CCF2">Instagram</div>
+<div style="font-weight:500;font-size:clamp(40px,9vw,104px);line-height:1.02;letter-spacing:-0.04em;overflow-wrap:anywhere">@team_jcw_</div>
+<p style="margin:0;font-size:18px;max-width:520px;color:#EDE6FA">팀 소식은 인스타그램 팀 계정에서 확인하세요.</p>
+<div style="padding-top:12px">
+<a href="https://www.instagram.com/team_jcw_?dmpr=dnJvb2tlNjYweG53" class="btn btn-light ext" style="min-height:56px;padding:0 36px;font-size:18px">Instagram 바로가기<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"></path></svg></a>
+</div>
+</div>
+</section>
+
+<footer style="background:#0B0B0F;color:#FFFFFF;padding:36px 0">
+<div style="max-width:1120px;margin:0 auto;padding:0 24px;box-sizing:border-box;display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:center">
+<img src="assets/jcw-logo.svg" alt="JCW" style="display:block;height:22px;width:auto;filter:invert(1)">
+<nav style="display:flex;flex-wrap:wrap;gap:4px 24px;font-size:15px">
+<a href="#about" class="flink">팀 소개</a>
+<a href="#history" class="flink">히스토리</a>
+<a href="#sponsor" class="flink">스폰서</a>
+<a href="shop.html" class="flink" onClick="{{ goApply }}">SHOP</a>
+<a href="apply.html" class="flink" onClick="{{ goApply }}">팀 지원</a>
+<a href="#instagram" class="flink">Instagram</a>
+</nav>
+<div style="color:#D9CCF2;font-size:14px">Jungho Cycling Works · Since 2023</div>
+</div>
+</footer>
+
+<button type="button" class="bgm" onClick="{{ toggleMusic }}" aria-label="{{ musicLabel }}" aria-pressed="{{ musicPressed }}">
+<span class="bgm-label" style="max-width: {{ labelMax }}; opacity: {{ labelOpacity }}; padding-left: {{ labelPadLeft }}">SKAI ISYOURGOD - <span lang="zh-Hans" style="font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif">八方来财</span></span>
+<span class="bgm-ic">
+<sc-if value="{{ isPaused }}" hint-placeholder-val="{{ true }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z" fill="currentColor"></path></svg></sc-if>
+<sc-if value="{{ isPlaying }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"></path></svg></sc-if>
+</span>
+</button>
+
+</div>
+</template>
+<script src="js/dc.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

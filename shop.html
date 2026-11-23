@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>team jcw SHOP</title>
+<link rel="icon" href="assets/jcw-logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFFFF;color:#0B0B0F;font-family:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;line-height:1.75;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:#3B1A78;color:#FFFFFF}
+a{color:#3B1A78;text-decoration-thickness:1px;text-underline-offset:4px}a:hover{color:#0B0B0F}
+a:focus-visible,button:focus-visible{outline:3px solid #3B1A78;outline-offset:3px}
+.on-dark a:focus-visible,.on-dark button:focus-visible{outline-color:#FFFFFF}
+
+.nlink{display:inline-block;padding:10px 0;color:#0B0B0F;text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:2px;text-underline-offset:8px;transition:text-decoration-color .2s,color .2s}
+.nlink:hover{color:#3B1A78;text-decoration-color:#3B1A78}
+.nlink[aria-current]{color:#3B1A78;text-decoration-color:#3B1A78}
+.flink{color:#D9CCF2;text-decoration:none;transition:color .2s}.flink:hover{color:#FFFFFF}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;box-sizing:border-box;min-height:52px;padding:0 28px;border:1px solid transparent;font:inherit;font-weight:500;letter-spacing:0.03em;text-decoration:none;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
+.btn-primary{background:#3B1A78;color:#FFFFFF;border-color:#3B1A78}
+.btn-primary:hover{background:#0B0B0F;border-color:#0B0B0F;color:#FFFFFF}
+.btn-outline{background:transparent;color:#0B0B0F;border-color:#0B0B0F}
+.btn-outline:hover{background:#0B0B0F;color:#FFFFFF}
+.btn-light{background:#FFFFFF;color:#3B1A78;border-color:#FFFFFF}
+.btn-light:hover{background:#3B1A78;border-color:#FFFFFF;color:#FFFFFF}
+.btn-line-light{background:transparent;color:#FFFFFF;border-color:#FFFFFF}
+.btn-line-light:hover{background:#FFFFFF;color:#0B0B0F}
+
+.eyebrow{display:flex;flex-direction:column;gap:2px;padding-top:8px}
+.eyebrow b{font-weight:700;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:#3B1A78}
+.eyebrow span{font-size:15px;font-weight:700}
+
+.sz{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-width:64px;min-height:52px;padding:0 16px;border:1px solid #0B0B0F;font:inherit;font-size:17px;font-weight:700;cursor:pointer;transition:background-color .15s,color .15s,border-color .15s}
+.sz:hover{border-color:#3B1A78}
+.txtbtn{display:inline-block;padding:8px 0;margin:0;border:0;background:transparent;font:inherit;font-size:15px;font-weight:700;color:#3B1A78;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.txtbtn:hover{color:#0B0B0F}
+.step{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;width:44px;height:44px;padding:0;border:1px solid #0B0B0F;background:#FFFFFF;color:#0B0B0F;font:inherit;font-size:20px;font-weight:700;line-height:1;cursor:pointer;transition:background-color .15s,color .15s}
+.step:hover{background:#0B0B0F;color:#FFFFFF}
+.qty{display:inline-block;min-width:44px;text-align:center;font-size:18px;font-weight:700;font-variant-numeric:tabular-nums}
+
+.overlay{position:fixed;top:0;right:0;bottom:0;left:0;z-index:100;display:flex;align-items:center;justify-content:center;box-sizing:border-box;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgba(11,11,15,0.66)}
+.panel{width:100%;max-width:920px;max-height:100%;overflow:auto;box-sizing:border-box;background:#FFFFFF;border:1px solid #0B0B0F;padding:24px}
+
+.popup{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:90;width:min(420px,calc(100vw - 32px));box-sizing:border-box;overflow:hidden;background:#0B0B0F;color:#FFFFFF;border:1px solid #3B1A78;animation:popIn .3s ease-out}
+.popup-body{display:flex;flex-direction:column;gap:20px;padding:24px 24px 20px}
+.popup-bar{display:block;height:4px;background:#3B1A78;transform-origin:left center;animation:popBar 5s linear forwards}
+@keyframes popIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes popBar{from{transform:scaleX(1)}to{transform:scaleX(0)}}
+
+@media (prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+.btn,.sz,.step,.nlink{transition:none}
+.popup{animation:none}
+.popup-bar{animation:none}
+}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<template id="dc-tpl">
+<div style="width:100%">
+
+<section style="background:#FFFFFF">
+<div style="max-width:1120px;margin:0 auto;padding:0 24px;box-sizing:border-box">
+<header style="display:flex;flex-wrap:wrap;gap:8px 32px;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid rgba(11,11,15,0.16)">
+<a href="index.html" style="display:inline-block"><img src="assets/jcw-logo.svg" alt="JCW, 팀 소개로 돌아가기" style="display:block;height:26px;width:auto"></a>
+<nav style="display:flex;flex-wrap:wrap;gap:0 28px;align-items:center;font-weight:500">
+<a href="index.html" class="nlink">팀 소개</a>
+<a href="shop.html" class="nlink" aria-current="page">SHOP</a>
+<a href="cart.html" class="nlink">{{ cartLabel }}</a>
+<a href="apply.html" class="btn btn-primary" style="min-height:40px;padding:0 20px;font-size:15px">팀 지원</a>
+</nav>
+</header>
+<div style="display:flex;flex-direction:column;gap:20px;padding:96px 0 88px">
+<div class="eyebrow" style="padding-top:0"><b>Shop</b><span>샵</span></div>
+<h1 style="margin:0;font-size:clamp(56px,12vw,148px);line-height:1;font-weight:500;letter-spacing:-0.05em">SHOP</h1>
+</div>
+</div>
+</section>
+
+<section id="tshirts" style="border-top: 1px solid rgba(11,11,15,0.14)">
+<div style="max-width:1120px;margin:0 auto;padding:0 24px;box-sizing:border-box;display:flex;flex-wrap:wrap;gap:56px 64px;padding-top:88px;padding-bottom:120px">
+<div style="flex:1 1 440px;min-width:0">
+<div style="background:#F8F9FB">
+<img src="assets/tshirt.jpg" alt="JCW 블랙 티셔츠. 가슴 왼쪽에 JCW 로고가 있습니다." style="display:block;width:100%;height:auto">
+</div>
+</div>
+<div style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<div class="eyebrow" style="padding-top:0"><b>JCW T-SHIRTS</b></div>
+<h2 style="margin:0;font-size:clamp(30px,4.2vw,48px);line-height:1.2;font-weight:700;letter-spacing:-0.03em">JCW T-SHIRTS</h2>
+<div style="font-size:28px;font-weight:700;font-variant-numeric:tabular-nums">25,000원</div>
+<p style="margin:0;font-size:17px;color:#3D3548">블랙 티셔츠입니다. 가슴 왼쪽에 JCW 로고가 들어갑니다.</p>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;justify-content:space-between">
+<div style="font-weight:700">사이즈</div>
+<button type="button" class="txtbtn" onClick="{{ openChart }}">사이즈표</button>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<sc-for list="{{ sizeItems }}" as="s" hint-placeholder-count="6">
+<button type="button" class="sz" onClick="{{ s.pick }}" aria-pressed="{{ s.pressed }}" style="background: {{ s.bg }}; color: {{ s.fg }}; border-color: {{ s.bd }}">{{ s.label }}</button>
+</sc-for>
+</div>
+<div role="status" aria-live="polite" style="min-height:26px;font-weight:700;color:#3B1A78">{{ sizeMsg }}</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="font-weight:700">수량</div>
+<div style="display:flex;align-items:center;gap:4px">
+<button type="button" class="step" onClick="{{ qtyDown }}" aria-label="수량 줄이기">−</button>
+<span class="qty" aria-live="polite">{{ qty }}</span>
+<button type="button" class="step" onClick="{{ qtyUp }}" aria-label="수량 늘리기">+</button>
+</div>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<button type="button" class="btn" disabled="" aria-disabled="true" style="flex:1 1 100%;background:#EDEBF0;color:#6B6573;border-color:#EDEBF0;cursor:not-allowed">품절</button>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="on-dark" style="background:#0B0B0F;color:#FFFFFF;padding:36px 0">
+<div style="max-width:1120px;margin:0 auto;padding:0 24px;box-sizing:border-box;display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:center">
+<img src="assets/jcw-logo.svg" alt="JCW" style="display:block;height:22px;width:auto;filter:invert(1)">
+<nav style="display:flex;flex-wrap:wrap;gap:4px 24px;font-size:15px">
+<a href="index.html" class="flink">팀 소개</a>
+<a href="shop.html" class="flink">SHOP</a>
+<a href="cart.html" class="flink">장바구니</a>
+<a href="apply.html" class="flink">팀 지원</a>
+<a href="https://www.instagram.com/team_jcw_?dmpr=dnJvb2tlNjYweG53" class="flink">Instagram</a>
+</nav>
+<div style="color:#D9CCF2;font-size:14px">Jungho Cycling Works · Since 2023</div>
+</div>
+</footer>
+
+<sc-if value="{{ popupOpen }}" hint-placeholder-val="{{ false }}">
+<div class="popup on-dark" role="dialog" aria-label="카트로 이동">
+<div class="popup-body">
+<div style="display:flex;flex-direction:column;gap:6px">
+<div style="font-size:14px;font-weight:700;color:#D9CCF2">{{ popupTitle }}</div>
+<div style="font-size:18px;font-weight:700;line-height:1.5">{{ popupDetail }}</div>
+<div style="font-size:20px;font-weight:700;line-height:1.4;padding-top:6px">카트로 이동하시겠습니까?</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<a href="cart.html" class="btn btn-light" onClick="{{ goCart }}" style="flex:1 1 140px">카트로 이동</a>
+<button type="button" class="btn btn-line-light" onClick="{{ closePopup }}" style="flex:1 1 100px">닫기</button>
+</div>
+</div>
+<span class="popup-bar"></span>
+</div>
+</sc-if>
+
+<sc-if value="{{ chartOpen }}" hint-placeholder-val="{{ false }}">
+<div class="overlay" onClick="{{ closeChart }}">
+<div class="panel" role="dialog" aria-modal="true" aria-label="사이즈표" onClick="{{ stop }}">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:16px">
+<div style="font-size:20px;font-weight:700">사이즈표</div>
+<button type="button" class="btn btn-outline" onClick="{{ closeChart }}" style="min-height:44px;padding:0 20px;font-size:15px">닫기</button>
+</div>
+<div style="overflow-x:auto">
+<img src="assets/size-chart.png" alt="사이즈표. S부터 3XL까지 모델 키, 총장, 몸무게, 어깨너비, 소매 길이" style="display:block;width:100%;min-width:640px;height:auto">
+</div>
+</div>
+</div>
+</sc-if>
+
+</div>
+</template>
+<script src="js/dc.js"></script>
+<script src="js/shop.js"></script>
+</body>
+</html>

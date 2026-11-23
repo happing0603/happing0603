@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>team jcw 팀 지원</title>
+<link rel="icon" href="assets/jcw-logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFFFF;color:#0B0B0F;font-family:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;line-height:1.75;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:#3B1A78;color:#FFFFFF}
+a{color:#3B1A78;text-decoration-thickness:1px;text-underline-offset:4px}a:hover{color:#0B0B0F}
+a:focus-visible,button:focus-visible{outline:3px solid #3B1A78;outline-offset:3px}
+.on-dark a:focus-visible,.on-dark button:focus-visible{outline-color:#FFFFFF}
+
+.nlink{display:inline-block;padding:10px 0;color:#0B0B0F;text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:1px;text-underline-offset:8px;transition:text-decoration-color .2s,color .2s}
+.nlink:hover{color:#3B1A78;text-decoration-color:#3B1A78}
+.nlink[aria-current]{color:#3B1A78;text-decoration-color:#3B1A78}
+.flink{color:#D9CCF2;text-decoration:none;transition:color .2s}.flink:hover{color:#FFFFFF}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;box-sizing:border-box;min-height:52px;padding:0 32px;border:1px solid transparent;font:inherit;font-weight:500;letter-spacing:0.03em;text-decoration:none;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .2s}
+.btn.ext:hover svg{transform:translate(3px,-3px)}
+.btn-primary{background:#3B1A78;color:#FFFFFF;border-color:#3B1A78}
+.btn-primary:hover{background:#0B0B0F;border-color:#0B0B0F;color:#FFFFFF}
+.btn-outline{background:transparent;color:#0B0B0F;border-color:#0B0B0F}
+.btn-outline:hover{background:#0B0B0F;color:#FFFFFF}
+.btn-light{background:#FFFFFF;color:#3B1A78;border-color:#FFFFFF}
+.btn-light:hover{background:#0B0B0F;border-color:#0B0B0F;color:#FFFFFF}
+.btn-line-light{background:transparent;color:#FFFFFF;border-color:rgba(255,255,255,0.7)}
+.btn-line-light:hover{background:#FFFFFF;color:#3B1A78;border-color:#FFFFFF}
+
+.eyebrow{display:flex;flex-direction:column;gap:2px;padding-top:8px}
+.eyebrow b{font-weight:700;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#3B1A78}
+.eyebrow span{font-size:15px;font-weight:500}
+
+.cdgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.cd{display:flex;flex-direction:column;gap:6px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.35);min-width:0}
+.cd-n{font-size:clamp(44px,9vw,104px);font-weight:300;line-height:1;letter-spacing:-0.03em;font-variant-numeric:tabular-nums}
+.cd-l{font-size:14px;font-weight:500;letter-spacing:0.08em;color:#D9CCF2}
+@media (max-width:600px){.cdgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 24px}}
+
+.ck{display:flex;align-items:center;gap:20px;width:100%;box-sizing:border-box;padding:26px 8px 26px 0;margin:0;border:0;border-bottom:1px solid rgba(11,11,15,0.16);background:transparent;color:inherit;font:inherit;text-align:left;cursor:pointer;transition:background-color .2s}
+.ck:hover{background:rgba(59,26,120,0.04)}
+.ckbox{flex:none;display:flex;align-items:center;justify-content:center;width:28px;height:28px;box-sizing:border-box;border:1px solid #0B0B0F;transition:background-color .2s,border-color .2s}
+.ckbox svg{width:16px;height:16px;display:block;transition:opacity .2s}
+.cktext{min-width:0;font-size:22px;font-weight:500;line-height:1.5;letter-spacing:-0.01em}
+.prog{position:relative;height:2px;background:rgba(11,11,15,0.14);overflow:hidden}
+.prog-fill{position:absolute;left:0;top:0;height:100%;background:#3B1A78;transition:width .35s ease}
+
+@media (prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+.btn,.btn svg,.nlink,.ck,.ckbox,.ckbox svg,.prog-fill{transition:none}
+}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<template id="dc-tpl">
+<div style="width:100%">
+
+<section style="background:#FFFFFF">
+<div style="max-width:1120px;margin:0 auto;padding:0 24px;box-sizing:border-box">
+<header style="display:flex;flex-wrap:wrap;gap:8px 32px;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid rgba(11,11,15,0.16)">
+<a href="index.html" style="display:inline-block"><img src="assets/jcw-logo.svg" alt="JCW, 팀 소개로 돌아가기" style="display:block;height:26px;width:auto"></a>
+<nav style="display:flex;flex-wrap:wrap;gap:0 28px;align-items:center;font-weight:500">
+<a href="index.html" class="nlink">팀 소개</a>
+<a href="shop.html" class="nlink">SHOP</a>
+<a href="apply.html" class="nlink" aria-current="page">팀 지원</a>
+<a href="https://www.instagram.com/team_jcw_?dmpr=dnJvb2tlNjYweG53" class="nlink">Instagram</a>
+</nav>
+</header>
+<div style="display:flex;flex-direction:column;gap:24px;padding:128px 0 112px;max-width:760px">
+<div class="eyebrow" style="padding-top:0"><b>Apply</b><span>팀 지원</span></div>
+<h1 style="margin:0;font-size:clamp(42px,7vw,84px);line-height:1.1;font-weight:500;letter-spacing:-0.04em;text-wrap:balance">WITH TEAM JCW</h1>
+<p style="margin:0;font-size:19px;max-width:560px;color:#3D3548">지원 조건을 확인한 뒤 인스타그램으로 문의해 주세요.</p>
+</div>
+</div>
+</section>
+
+<section class="on-dark" style="background:#3B1A78;color:#FFFFFF">
+<div style="max-width:1120px;margin:0 auto;padding:0 24px;box-sizing:border-box;display:flex;flex-direction:column;gap:48px;padding-top:80px;padding-bottom:96px">
+<div style="display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;justify-content:space-between">
+<div style="display:flex;flex-direction:column;gap:2px">
+<b style="font-weight:700;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#D9CCF2">Recruiting</b>
+<span style="font-size:15px;font-weight:500">팀원 모집 마감까지</span>
+</div>
+<div style="font-size:15px;font-weight:500;color:#EDE6FA">2027년 5월 31일 23:59 마감 (한국 시간)</div>
+</div>
+<sc-if value="{{ open }}" hint-placeholder-val="{{ true }}">
+<div class="cdgrid" role="timer" aria-label="모집 마감까지 남은 시간">
+<div class="cd"><span class="cd-n">{{ days }}</span><span class="cd-l">일</span></div>
+<div class="cd"><span class="cd-n">{{ hours }}</span><span class="cd-l">시간</span></div>
+<div class="cd"><span class="cd-n">{{ mins }}</span><span class="cd-l">분</span></div>
+<div class="cd"><span class="cd-n">{{ secs }}</span><span class="cd-l">초</span></div>
+</div>
+</sc-if>
+<sc-if value="{{ closed }}" hint-placeholder-val="{{ false }}">
+<div style="font-size:clamp(32px,6vw,64px);font-weight:300;line-height:1.15;letter-spacing:-0.03em">모집이 마감되었습니다.</div>
+</sc-if>
+</div>
+</section>
+
+<section id="requirements" style="border-top:1px solid rgba(11,11,15,0.14)">
+<div style="max-width:1120px;margin:0 auto;padding:0 24px;box-sizing:border-box;display:flex;flex-wrap:wrap;gap:40px 64px;padding-top:128px;padding-bottom:136px">
+<div class="eyebrow" style="flex:0 0 160px"><b>Requirements</b><span>지원 조건</span></div>
+<div style="flex:1 1 480px;min-width:0;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px;max-width:680px">
+<h2 style="margin:0;font-size:clamp(30px,4.2vw,48px);line-height:1.25;font-weight:700;letter-spacing:-0.03em">지원서 내용</h2>
+<p style="margin:0;font-size:17px;color:#3D3548">모두 해당하면 하나씩 체크해 주세요. 체크를 마치면 팀장 인스타그램으로 보낼 문의 문구가 나옵니다.</p>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:0">
+<div role="group" aria-label="지원 조건" style="border-top:1px solid #0B0B0F">
+<sc-for list="{{ checkItems }}" as="it" hint-placeholder-count="3">
+<button type="button" role="checkbox" class="ck" aria-checked="{{ it.checked }}" onClick="{{ it.toggle }}">
+<span class="ckbox" style="background: {{ it.bg }}; border-color: {{ it.bd }}"><svg viewBox="0 0 24 24" aria-hidden="true" style="opacity: {{ it.mark }}"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="square"></path></svg></span>
+<span class="cktext">{{ it.label }}</span>
+</button>
+</sc-for>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;padding-top:28px">
+<div style="font-size:14px;font-weight:500;letter-spacing:0.04em;color:#3D3548" aria-live="polite">{{ progressText }}</div>
+<div class="prog"><span class="prog-fill" style="width: {{ pct }}"></span></div>
+</div>
+</div>
+
+<sc-if value="{{ notDone }}" hint-placeholder-val="{{ true }}">
+<p style="margin:0;font-size:16px;color:#3D3548">조건을 모두 확인하면 문의 문구가 나옵니다.</p>
+</sc-if>
+
+<sc-if value="{{ allDone }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:24px;padding:36px;background:#F7F5FA;border:1px solid rgba(11,11,15,0.16)">
+<div style="display:flex;flex-direction:column;gap:6px">
+<div style="font-size:20px;font-weight:700">문의 문구</div>
+<div style="font-size:15px;color:#3D3548">복사한 뒤 비어 있는 항목을 채워 팀장 인스타그램 DM으로 보내 주세요.</div>
+</div>
+<div style="font-size:16px;line-height:1.95;white-space:pre-line;user-select:text;padding:24px;background:#FFFFFF;border:1px solid rgba(11,11,15,0.16)">{{ message }}</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<button type="button" class="btn btn-outline" onClick="{{ copyMessage }}">문구 복사</button>
+<a href="https://www.instagram.com/happpy_ing_?gwpx=amZiNXpzYzAxM21t" class="btn btn-primary ext">팀장 인스타그램 열기<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"></path></svg></a>
+</div>
+<div role="status" aria-live="polite" style="min-height:24px;font-size:15px;font-weight:500;color:#3B1A78">{{ copyMsg }}</div>
+</div>
+</sc-if>
+</div>
+</div>
+</section>
+
+<section style="border-top:1px solid rgba(11,11,15,0.14)">
+<div style="max-width:1120px;margin:0 auto;padding:0 24px;box-sizing:border-box;display:flex;flex-wrap:wrap;gap:40px 64px;padding-top:128px;padding-bottom:136px">
+<div class="eyebrow" style="flex:0 0 160px"><b>Team kit</b><span>팀킷</span></div>
+<div style="flex:1 1 480px;min-width:0;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:20px;max-width:680px">
+<h2 style="margin:0;font-size:clamp(30px,4.2vw,48px);line-height:1.25;font-weight:700;letter-spacing:-0.03em">팀킷 시안</h2>
+<p style="margin:0;font-size:17px;color:#3D3548">team jcw 팀킷의 앞면과 뒷면입니다. 팀킷 구매가 가능해야 지원할 수 있습니다.</p>
+</div>
+<div style="display:flex;flex-wrap:wrap">
+<div style="flex:0 1 780px;min-width:0">
+<img src="assets/team-kit.png" alt="team jcw 팀킷 시안. 진한 보라색 상의와 검정 하의, 앞면과 뒷면" style="display:block;width:100%;height:auto">
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="on-dark" style="position:relative;overflow:hidden;background:#3B1A78;color:#FFFFFF">
+<img src="assets/jcw-logo.svg" alt="" aria-hidden="true" style="position:absolute;right:-80px;bottom:-40px;width:min(70%,680px);height:auto;filter:invert(1);opacity:0.07;pointer-events:none">
+<div style="position:relative;max-width:1120px;margin:0 auto;padding:0 24px;box-sizing:border-box;display:flex;flex-direction:column;gap:24px;padding-top:112px;padding-bottom:120px">
+<div style="font-weight:500;font-size:clamp(34px,6vw,68px);line-height:1.1;letter-spacing:-0.04em;text-wrap:balance">인스타그램으로 문의하세요</div>
+<p style="margin:0;font-size:18px;max-width:520px;color:#EDE6FA">팀장 인스타그램으로 메시지를 보내 주세요.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;padding-top:12px">
+<a href="https://www.instagram.com/happpy_ing_?gwpx=amZiNXpzYzAxM21t" class="btn btn-light ext" style="min-height:56px;padding:0 36px;font-size:17px">팀장 인스타그램으로 문의<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"></path></svg></a>
+<a href="https://www.instagram.com/team_jcw_?dmpr=dnJvb2tlNjYweG53" class="btn btn-line-light ext" style="min-height:56px;padding:0 36px;font-size:17px">팀 인스타그램<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"></path></svg></a>
+</div>
+</div>
+</section>
+
+<footer class="on-dark" style="background:#0B0B0F;color:#FFFFFF;padding:36px 0">
+<div style="max-width:1120px;margin:0 auto;padding:0 24px;box-sizing:border-box;display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:center">
+<img src="assets/jcw-logo.svg" alt="JCW" style="display:block;height:22px;width:auto;filter:invert(1)">
+<nav style="display:flex;flex-wrap:wrap;gap:4px 24px;font-size:15px">
+<a href="index.html" class="flink">팀 소개</a>
+<a href="shop.html" class="flink">SHOP</a>
+<a href="apply.html" class="flink">팀 지원</a>
+<a href="https://www.instagram.com/team_jcw_?dmpr=dnJvb2tlNjYweG53" class="flink">Instagram</a>
+</nav>
+<div style="color:#D9CCF2;font-size:14px">Jungho Cycling Works · Since 2023</div>
+</div>
+</footer>
+
+</div>
+</template>
+<script src="js/dc.js"></script>
+<script src="js/apply.js"></script>
+</body>
+</html>

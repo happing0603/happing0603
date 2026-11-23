@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>team jcw 장바구니</title>
+<link rel="icon" href="assets/jcw-logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFFFF;color:#0B0B0F;font-family:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;line-height:1.75;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:#3B1A78;color:#FFFFFF}
+a{color:#3B1A78;text-decoration-thickness:1px;text-underline-offset:4px}a:hover{color:#0B0B0F}
+a:focus-visible,button:focus-visible{outline:3px solid #3B1A78;outline-offset:3px}
+.on-dark a:focus-visible{outline-color:#FFFFFF}
+
+.nlink{display:inline-block;padding:10px 0;color:#0B0B0F;text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:2px;text-underline-offset:8px;transition:text-decoration-color .2s,color .2s}
+.nlink:hover{color:#3B1A78;text-decoration-color:#3B1A78}
+.nlink[aria-current]{color:#3B1A78;text-decoration-color:#3B1A78}
+.flink{color:#D9CCF2;text-decoration:none;transition:color .2s}.flink:hover{color:#FFFFFF}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;box-sizing:border-box;min-height:52px;padding:0 28px;border:1px solid transparent;font:inherit;font-weight:500;letter-spacing:0.03em;text-decoration:none;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
+.btn-primary{background:#3B1A78;color:#FFFFFF;border-color:#3B1A78}
+.btn-primary:hover{background:#0B0B0F;border-color:#0B0B0F;color:#FFFFFF}
+.btn-outline{background:transparent;color:#0B0B0F;border-color:#0B0B0F}
+.btn-outline:hover{background:#0B0B0F;color:#FFFFFF}
+
+.eyebrow{display:flex;flex-direction:column;gap:2px;padding-top:8px}
+.eyebrow b{font-weight:700;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:#3B1A78}
+.eyebrow span{font-size:15px;font-weight:700}
+
+.step{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;width:44px;height:44px;padding:0;border:1px solid #0B0B0F;background:#FFFFFF;color:#0B0B0F;font:inherit;font-size:20px;font-weight:700;line-height:1;cursor:pointer;transition:background-color .15s,color .15s}
+.step:hover{background:#0B0B0F;color:#FFFFFF}
+.qty{display:inline-block;min-width:44px;text-align:center;font-size:18px;font-weight:700;font-variant-numeric:tabular-nums}
+
+.crow{display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;padding:24px 0;border-bottom:1px solid rgba(11,11,15,0.16)}
+.cimg{flex:0 0 88px;width:88px;background:#F8F9FB}
+.cimg img{display:block;width:100%;height:auto}
+.cinfo{flex:1 1 200px;min-width:0}
+.cinfo strong{display:block;font-size:18px;line-height:1.4}
+.cinfo span{color:#3D3548;font-size:15px}
+.cline{flex:0 0 110px;text-align:right;font-size:18px;font-weight:700;font-variant-numeric:tabular-nums}
+.rm{padding:8px 0;margin:0;border:0;background:transparent;font:inherit;font-size:14px;font-weight:700;color:#3D3548;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.rm:hover{color:#3B1A78}
+
+@media (prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+.btn,.step,.nlink{transition:none}
+}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<template id="dc-tpl">
+<div style="width:100%">
+
+<section style="background:#FFFFFF">
+<div style="max-width:1120px;margin:0 auto;padding:0 24px;box-sizing:border-box">
+<header style="display:flex;flex-wrap:wrap;gap:8px 32px;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid rgba(11,11,15,0.16)">
+<a href="index.html" style="display:inline-block"><img src="assets/jcw-logo.svg" alt="JCW, 팀 소개로 돌아가기" style="display:block;height:26px;width:auto"></a>
+<nav style="display:flex;flex-wrap:wrap;gap:0 28px;align-items:center;font-weight:500">
+<a href="index.html" class="nlink">팀 소개</a>
+<a href="shop.html" class="nlink">SHOP</a>
+<a href="cart.html" class="nlink" aria-current="page">{{ cartLabel }}</a>
+<a href="apply.html" class="btn btn-primary" style="min-height:40px;padding:0 20px;font-size:15px">팀 지원</a>
+</nav>
+</header>
+<div style="display:flex;flex-direction:column;gap:20px;padding:96px 0 88px">
+<div class="eyebrow" style="padding-top:0"><b>Cart</b><span>장바구니</span></div>
+<h1 style="margin:0;font-size:clamp(56px,12vw,148px);line-height:1;font-weight:500;letter-spacing:-0.05em">CART</h1>
+</div>
+</div>
+</section>
+
+<section style="border-top: 1px solid rgba(11,11,15,0.14)">
+<div style="max-width:1120px;margin:0 auto;padding:0 24px;box-sizing:border-box;padding-top:72px;padding-bottom:120px">
+<div style="max-width:880px;display:flex;flex-direction:column;gap:40px">
+
+<sc-if value="{{ cartEmpty }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:16px;padding:40px 0;border-top:1px solid #0B0B0F;border-bottom:1px solid rgba(11,11,15,0.16)">
+<div style="font-size:20px;font-weight:700">장바구니가 비어 있습니다.</div>
+<a href="shop.html" style="font-weight:700">SHOP에서 JCW T-SHIRTS 보기</a>
+</div>
+</sc-if>
+
+<sc-if value="{{ hasCart }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;border-top:1px solid #0B0B0F">
+<sc-for list="{{ cartItems }}" as="it" hint-placeholder-count="1">
+<div class="crow">
+<div class="cimg"><img src="assets/tshirt.jpg" alt=""></div>
+<div class="cinfo"><strong>JCW T-SHIRTS</strong><span>사이즈 {{ it.size }} · {{ it.unitText }}</span></div>
+<div style="display:flex;align-items:center;gap:4px">
+<button type="button" class="step" onClick="{{ it.dec }}" aria-label="{{ it.decLabel }}">−</button>
+<span class="qty">{{ it.qty }}</span>
+<button type="button" class="step" onClick="{{ it.inc }}" aria-label="{{ it.incLabel }}">+</button>
+</div>
+<div class="cline">{{ it.lineText }}</div>
+<button type="button" class="rm" onClick="{{ it.remove }}" aria-label="{{ it.removeLabel }}">삭제</button>
+</div>
+</sc-for>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between">
+<div style="display:flex;flex-direction:column">
+<span style="font-size:15px;color:#3D3548">총 {{ totalQty }}개</span>
+<span style="font-size:32px;font-weight:700;font-variant-numeric:tabular-nums">{{ totalText }}</span>
+</div>
+<a href="checkout.html" class="btn btn-primary" onClick="{{ goCheckout }}" style="min-width:220px">결제하기</a>
+</div>
+<a href="shop.html" style="font-weight:700">쇼핑 계속하기</a>
+</div>
+</sc-if>
+
+
+</div>
+</div>
+</section>
+
+<footer class="on-dark" style="background:#0B0B0F;color:#FFFFFF;padding:36px 0">
+<div style="max-width:1120px;margin:0 auto;padding:0 24px;box-sizing:border-box;display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:center">
+<img src="assets/jcw-logo.svg" alt="JCW" style="display:block;height:22px;width:auto;filter:invert(1)">
+<nav style="display:flex;flex-wrap:wrap;gap:4px 24px;font-size:15px">
+<a href="index.html" class="flink">팀 소개</a>
+<a href="shop.html" class="flink">SHOP</a>
+<a href="cart.html" class="flink">장바구니</a>
+<a href="apply.html" class="flink">팀 지원</a>
+<a href="https://www.instagram.com/team_jcw_?dmpr=dnJvb2tlNjYweG53" class="flink">Instagram</a>
+</nav>
+<div style="color:#D9CCF2;font-size:14px">Jungho Cycling Works · Since 2023</div>
+</div>
+</footer>
+
+</div>
+</template>
+<script src="js/dc.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>
